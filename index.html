@@ -1,6 +1,36 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        Hello Yogurt!
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB Connection</title>
+</head>
+<body>
+
+<?php
+    // MongoDB connection details
+    $mongoHost = '76.34.197.80';
+    $mongoPort = 27017;
+    $mongoUsername = 'spong';
+    $mongoPassword = '1221';
+    $databaseName = 'Cluster0';
+
+    try {
+        // Create a new MongoDB client
+        $mongoClient = new MongoDB\Driver\Manager("mongodb://$mongoUsername:$mongoPassword@$mongoHost:$mongoPort");
+
+        // Perform a simple query to check if the connection is successful
+        $query = new MongoDB\Driver\Query([]);
+        $cursor = $mongoClient->executeQuery("$databaseName.collectionName", $query);
+
+        // If no exception is thrown, connection is successful
+        echo '<p>Connected to MongoDB successfully!</p>';
+
+    } catch (MongoDB\Driver\Exception\Exception $e) {
+        // Handle connection errors
+        echo '<p>Error connecting to MongoDB: ' . $e->getMessage() . '</p>';
+    }
+?>
+
+</body>
 </html>
