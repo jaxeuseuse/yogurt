@@ -3,34 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MongoDB Connection</title>
+    <title>Display Users</title>
 </head>
 <body>
+    <h2>User List</h2>
 
-<?php
-    // MongoDB connection details
-    $mongoHost = '76.34.197.80';
-    $mongoPort = 27017;
-    $mongoUsername = 'spong';
-    $mongoPassword = '1221';
-    $databaseName = 'Cluster0';
+    <?php
+        // MongoDB connection details
+        $mongoHost = '76.34.197.80';
+        $mongoPort = 27017;
+        $mongoUsername = 'spong';
+        $mongoPassword = '1221';
+        $databaseName = 'Cluster0';
 
-    try {
-        // Create a new MongoDB client
-        $mongoClient = new MongoDB\Driver\Manager("mongodb://$mongoUsername:$mongoPassword@$mongoHost:$mongoPort");
+        try {
+            // Create a new MongoDB client
+            $mongoClient = new MongoDB\Driver\Manager("mongodb://$mongoUsername:$mongoPassword@$mongoHost:$mongoPort");
 
-        // Perform a simple query to check if the connection is successful
-        $query = new MongoDB\Driver\Query([]);
-        $cursor = $mongoClient->executeQuery("$databaseName.collectionName", $query);
+            // Select the "users" collection
+            $collection = $databaseName . ".users";
 
-        // If no exception is thrown, connection is successful
-        echo '<p>Connected to MongoDB successfully!</p>';
+            // Perform a query to retrieve all documents in the "users" collection
+            $query = new MongoDB\Driver\Query([]);
+            $cursor = $mongoClient->executeQuery($collection, $query);
 
-    } catch (MongoDB\Driver\Exception\Exception $e) {
-        // Handle connection errors
-        echo '<p>Error connecting to MongoDB: ' . $e->getMessage() . '</p>';
-    }
-?>
+            // Convert the cursor to an array
+            $users = iterator_to_array($cursor);
+
+            // Display users in an unordered list
+            echo '<ul>';
+            foreach ($users as $user) {
+                echo '<li>' . $user->name . ' - ' . $user->email . '</li>';
+            }
+            echo '</ul>';
+
+        } catch (MongoDB\Driver\Exception\Exception $e) {
+            // Handle connection errors
+            echo '<p>Error connecting to MongoDB: ' . $e->getMessage() . '</p>';
+        }
+    ?>
 
 </body>
 </html>
