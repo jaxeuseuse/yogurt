@@ -3,45 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display Users</title>
+    <title>User List</title>
 </head>
 <body>
-    <h2>User List</h2>
 
-    <?php
-        // MongoDB connection details
-        $mongoHost = '76.34.197.80';
-        $mongoPort = 27017;
-        $mongoUsername = 'spong';
-        $mongoPassword = '1221';
-        $databaseName = 'Cluster0';
+<h2>User List</h2>
 
-        try {
-            // Create a new MongoDB client
-            $mongoClient = new MongoDB\Driver\Manager("mongodb://$mongoUsername:$mongoPassword@$mongoHost:$mongoPort");
+<?php
+    // MongoDB connection details
+    $mongoHost = '76.34.197.80';
+    $mongoPort = 27017;
+    $mongoUsername = 'spong';
+    $mongoPassword = '1221';
+    $databaseName = 'Cluster0';
 
-            // Select the "users" collection
-            $collection = $databaseName . ".users";
+    try {
+        // Create a new MongoDB client
+        $mongoClient = new MongoDB\Driver\Manager("mongodb://$mongoUsername:$mongoPassword@$mongoHost:$mongoPort");
 
-            // Perform a query to retrieve all documents in the "users" collection
-            $query = new MongoDB\Driver\Query([]);
-            $cursor = $mongoClient->executeQuery($collection, $query);
+        // Select the "users" collection
+        $collection = $databaseName . ".users";
 
-            // Convert the cursor to an array
-            $users = iterator_to_array($cursor);
+        // Perform a query to retrieve all documents in the "users" collection
+        $query = new MongoDB\Driver\Query([]);
+        $cursor = $mongoClient->executeQuery($collection, $query);
 
-            // Display users in an unordered list
-            echo '<ul>';
-            foreach ($users as $user) {
-                echo '<li>' . $user->name . ' - ' . $user->email . '</li>';
-            }
-            echo '</ul>';
+        // Convert the cursor to an array
+        $users = iterator_to_array($cursor);
 
-        } catch (MongoDB\Driver\Exception\Exception $e) {
-            // Handle connection errors
-            echo '<p>Error connecting to MongoDB: ' . $e->getMessage() . '</p>';
+        // Display users in an unordered list
+        echo '<ul>';
+        foreach ($users as $user) {
+            echo '<li>' . $user->name . ' - ' . $user->email . '</li>';
         }
-    ?>
+        echo '</ul>';
+
+    } catch (MongoDB\Driver\Exception\Exception $e) {
+        // Handle connection errors
+        echo '<p>Error connecting to MongoDB: ' . $e->getMessage() . '</p>';
+    }
+?>
 
 </body>
 </html>
