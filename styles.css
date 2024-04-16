@@ -237,28 +237,34 @@ input:checked + .slider:before {
   margin-left: 10px; /* Adjust the margin as needed */
 }
 
-/* Leaderboard buttons */
+/* Adjust the positioning and layout for leaderboard buttons */
 #leaderboard-buttons-left {
   position: absolute;
-  top: 50%;
-  left: 10px;
+  top: 51%; /* Adjust vertical position */
+  left: 260px;
   transform: translateY(-50%);
+  display: flex;
+  flex-direction: column; /* Change to vertical layout */
 }
 
 #leaderboard-buttons-right {
   position: absolute;
-  top: 50%;
-  right: 10px;
+  top: 51%; /* Adjust vertical position */
+  right: 120px;
   transform: translateY(-50%);
+  display: flex;
+  flex-direction: column; /* Change to vertical layout */
 }
 
+/* Optionally, you can style the buttons further */
 .leaderboard-button {
-  background-color: orange;
-  color: white;
+  background-color: rgb(255, 0, 0);
+  color: black;
   border: none;
-  padding: 12px 20px; /* Increased padding */
-  margin-bottom: 10px;
+  padding: 10px 15px; /* Increased padding */
+  margin-bottom: 30px;
   cursor: pointer;
   border-radius: 5px;
-  width: 150px; /* Set a fixed width */
+  width: 60px; /* Set a fixed width */
+  font-size: 40%;
 }
