@@ -255,3 +255,26 @@
     .answer {
       background: #333;
     }
+
+    #leaderboard-buttons-left {
+      float: right;
+      margin-right: 10px;
+    }
+
+    #leaderboard-buttons-right {
+      float: left;
+      margin-left: 10px;
+    }
+
+    .leaderboard-button {
+      background-color: orange;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+
+    .leaderboard-button:hover {
+    background-color: darkorange;
+    }
