@@ -156,6 +156,7 @@ input:checked + .slider:before {
   background: #4CAF50;
   color: white;
   border: none;
+  border-radius
   border-radius: 5px;
 }
 
@@ -193,18 +194,22 @@ input:checked + .slider:before {
 #leaderboard-buttons-left {
   position: absolute;
   top: 50%;
-  left: 10px;
+  left: calc(10px + #speed-buttons button:nth-child(1) width); /* Adjust based on button width and margin */
   transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
 }
 
 #leaderboard-buttons-right {
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: calc(10px + #speed-buttons-right button:nth-child(1) width); /* Adjust based on button width and margin */
   transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
 }
 
-/* New rule to position leaderboard buttons next to speed buttons */
+/* New rule to position leaderboard buttons next to speed buttons (adjusted) */
 .leaderboard-button {
   margin-top: calc(50% - 20px); /* Adjust based on button height */
   transform: translateY(-50%);
