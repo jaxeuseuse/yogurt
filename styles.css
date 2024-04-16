@@ -241,14 +241,14 @@ input:checked + .slider:before {
 #leaderboard-buttons-left {
   position: absolute;
   top: 50%;
-  left: calc(100% + 10px); /* Adjusted position */
+  left: 10px;
   transform: translateY(-50%);
 }
 
 #leaderboard-buttons-right {
   position: absolute;
   top: 50%;
-  right: calc(100% + 10px); /* Adjusted position */
+  right: 10px;
   transform: translateY(-50%);
 }
 
@@ -256,9 +256,9 @@ input:checked + .slider:before {
   background-color: orange;
   color: white;
   border: none;
-  padding: 10px 15px; /* Smaller padding */
-  margin-bottom: 5px;
+  padding: 12px 20px; /* Increased padding */
+  margin-bottom: 10px;
   cursor: pointer;
   border-radius: 5px;
-  width: auto; /* Set width to auto */
+  width: 150px; /* Set a fixed width */
 }
