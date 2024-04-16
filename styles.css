@@ -178,6 +178,44 @@ input:checked + .slider:before {
   border-radius: 5px;
 }
 
+/* Leaderboard buttons */
+.leaderboard-button {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 8px 16px; /* Reduced padding for a squarer shape */
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: unset; /* Remove fixed width for automatic sizing */
+}
+
+#leaderboard-buttons-left {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+#leaderboard-buttons-right {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+/* New rule to position leaderboard buttons next to speed buttons */
+.leaderboard-button {
+  margin-top: calc(50% - 20px); /* Adjust based on button height */
+  transform: translateY(-50%);
+}
+
+#speed-buttons button:last-child + .leaderboard-button,
+#speed-buttons-right button:last-child + .leaderboard-button {
+  margin-top: 0; /* Remove top margin for the last button in each group */
+}
+
+/* Magic 8 Ball Styles */
 #chat-box {
   position: absolute;
   bottom: 0;
@@ -228,37 +266,6 @@ input:checked + .slider:before {
   background-color: transparent;
 }
 
-#magic8ball-container {
-  display: flex;
-  align-items: center;
-}
-
 #magic8ball-answer-container {
   margin-left: 10px; /* Adjust the margin as needed */
-}
-
-/* Leaderboard buttons */
-#leaderboard-buttons-left {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-}
-
-#leaderboard-buttons-right {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-}
-
-.leaderboard-button {
-  background-color: orange;
-  color: white;
-  border: none;
-  padding: 12px 20px; /* Increased padding */
-  margin-bottom: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  width: 150px; /* Set a fixed width */
 }
