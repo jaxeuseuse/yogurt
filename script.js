@@ -218,7 +218,14 @@
 
   requestAnimationFrame(loop);
 
-  // Magic 8 Ball functionality
+  function openLeaderboard(speed) {
+  // You can implement logic to fetch data from the database and display it in the leaderboard
+  // For now, let's just display a placeholder message
+  const leaderboardPlaceholder = document.getElementById('leaderboard-placeholder');
+  leaderboardPlaceholder.innerHTML = `<p>Leaderboard for ${speed}</p>`;
+  leaderboardPlaceholder.style.display = 'block';
+}
+// Magic 8 Ball functionality
 
   // Helper function to generate Magic 8 Ball answers
   function generateMagic8BallAnswer() {
