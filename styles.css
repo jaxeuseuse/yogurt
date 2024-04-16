@@ -256,8 +256,9 @@ input:checked + .slider:before {
   background-color: orange;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 20px; /* Increased padding */
   margin-bottom: 10px;
   cursor: pointer;
   border-radius: 5px;
+  width: 150px; /* Set a fixed width */
 }
