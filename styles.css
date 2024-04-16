@@ -140,83 +140,65 @@ input:checked + .slider:before {
   font-weight: bold;
 }
 
-#speed-buttons {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
+/* Speed Buttons & Leaderboard Buttons */
+
+#speed-buttons-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap; /* Wrap buttons to multiple lines if needed */
+  justify-content: center; /* Center buttons horizontally */
 }
 
-#speed-buttons button {
-  margin-bottom: 10px;
-  padding: 15px;
-  cursor: pointer;
+.speed-button-group {
+  margin: 5px; /* Add spacing between button groups */
+  display: flex;
+  align-items: center;
+}
+
+.speed-button {
   background: #4CAF50;
   color: white;
   border: none;
-  border-radius: 5px;
-}
-
-#speed-buttons-right {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-}
-
-#speed-buttons-right button {
-  margin-bottom: 10px;
-  padding: 15px;
+  padding: 10px 20px; /*
+  padding: 10px 20px; /* Adjust padding for better fit */
+  margin-bottom: 5px;
   cursor: pointer;
-  background: #FFC107;
-  color: white;
-  border: none;
   border-radius: 5px;
 }
 
-/* Leaderboard buttons */
 .leaderboard-button {
   background-color: orange;
   color: white;
   border: none;
-  padding: 8px 16px; /* Reduced padding for a squarer shape */
-  margin-bottom: 10px;
+  padding: 5px 10px; /* Reduced padding for a squarer shape */
+  margin-left: 5px; /* Add spacing between buttons */
   cursor: pointer;
   border-radius: 5px;
-  width: unset; /* Remove fixed width for automatic sizing */
 }
 
-#leaderboard-buttons-left {
-  position: absolute;
-  top: 50%;
-  left: calc(10px + #speed-buttons button:nth-child(1) width); /* Adjust based on button width and margin */
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
+/* Centering everything */
+
+body {
+  text-align: center; /* Center all content by default */
 }
 
-#leaderboard-buttons-right {
-  position: absolute;
-  top: 50%;
-  right: calc(10px + #speed-buttons-right button:nth-child(1) width); /* Adjust based on button width and margin */
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
+#game,
+canvas {
+  margin: 0 auto; /* Center the canvas horizontally */
 }
 
-/* New rule to position leaderboard buttons next to speed buttons (adjusted) */
-.leaderboard-button {
-  margin-top: calc(50% - 20px); /* Adjust based on button height */
-  transform: translateY(-50%);
+.centered-container {
+  display: inline-block; /* Allow centering of inline elements */
+  text-align: center; /* Center content within the container */
 }
 
-#speed-buttons button:last-child + .leaderboard-button,
-#speed-buttons-right button:last-child + .leaderboard-button {
-  margin-top: 0; /* Remove top margin for the last button in each group */
+#score,
+#high-score,
+#game-over-popup,
+#pause-button,
+#special-switch-container,
+#speed-buttons-container,
+#chat-box {
+  margin: 10px auto; /* Center each element horizontally */
 }
 
 /* Magic 8 Ball Styles */
