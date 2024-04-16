@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Snake Game Canvas -->
+  <!-- Snake Game Canvas -->
   <canvas width="400" height="400" id="game"></canvas>
   <div id="score">Score: 0</div>
   <div id="high-score">High Score: 0</div>
@@ -32,37 +32,55 @@
   <!-- Speed buttons -->
   <div id="speed-buttons">
     <button class="speed-button" data-speed="0.001">BIGOILYYELLOWASIANMAN123</button>
+    <button class="leaderboard-button" onclick="openLeaderboard('BIGOILYYELLOWASIANMAN123')">Leaderboard</button>
     <button class="speed-button" data-speed="0.01">GOD MODE</button>
+    <button class="leaderboard-button" onclick="openLeaderboard('GOD MODE')">Leaderboard</button>
     <button class="speed-button" data-speed="0.1">WTF</button>
+    <button class="leaderboard-button" onclick="openLeaderboard('WTF')">Leaderboard</button>
     <button class="speed-button" data-speed="2">BANNANAS</button>
+    <button class="leaderboard-button" onclick="openLeaderboard('BANNANAS')">Leaderboard</button>
     <button class="speed-button" data-speed="3">CRAZY</button>
+    <button class="leaderboard-button" onclick="openLeaderboard('CRAZY')">Leaderboard</button>
     <button class="speed-button" data-speed="5">DAMNNNN</button>
+    <button class="leaderboard-button" onclick="openLeaderboard('DAMNNNN')">Leaderboard</button>
   </div>
 
   <div id="speed-buttons-right">
     <button class="speed-button" data-speed="6">DEFAULT</button>
+    <button class="leaderboard-button" onclick="openLeaderboard('DEFAULT')">Leaderboard</button>
     <button class="speed-button" data-speed="8">NOT BAD</button>
+    <button class="leaderboard-button" onclick="openLeaderboard('NOT BAD')">Leaderboard</button>
     <button class="speed-button" data-speed="9">EASY</button>
+    <button class="leaderboard-button" onclick="openLeaderboard('EASY')">Leaderboard</button>
     <button class="speed-button" data-speed="10">MID</button>
+    <button class="leaderboard-button" onclick="openLeaderboard('MID')">Leaderboard</button>
     <button class="speed-button" data-speed="12">SNAIL</button>
+    <button class="leaderboard-button" onclick="openLeaderboard('SNAIL')">Leaderboard</button>
     <button class="speed-button" data-speed="14">BRUH</button>
+    <button class="leaderboard-button" onclick="openLeaderboard('BRUH')">Leaderboard</button>
   </div>
 
-<!-- Chat Box for Magic 8 Ball -->
-<div id="chat-box">
-  <!-- Eight ball image -->
-  <div id="magic8ball-container">
-    <img src="/img/8ball.png" alt="Magic 8 Ball" id="eight-ball-image">
-    <div id="magic8ball-answer-container">
-      <div id="magic8ball-answer"></div>
+  <!-- Placeholder for leaderboard -->
+  <div id="leaderboard-placeholder" style="display: none;">
+    <!-- Leaderboard content will be inserted here -->
+  </div>
+
+  <!-- Chat Box for Magic 8 Ball -->
+  <div id="chat-box">
+    <!-- Eight ball image -->
+    <div id="magic8ball-container">
+      <img src="/img/8ball.png" alt="Magic 8 Ball" id="eight-ball-image">
+      <div id="magic8ball-answer-container">
+        <div id="magic8ball-answer"></div>
+      </div>
+    </div>
+
+    <div id="question-container">
+      <input type="text" id="question" placeholder="Ask anything">
+      <button id="ask-button" onclick="getMagic8BallAnswer()">Ask</button>
     </div>
   </div>
 
-  <div id="question-container">
-    <input type="text" id="question" placeholder="Ask anything">
-    <button id="ask-button" onclick="getMagic8BallAnswer()">Ask</button>
-  </div>
-</div>
   <script src="script.js"></script>
 </body>
 </html>
