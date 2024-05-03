@@ -10,6 +10,12 @@ h1, h4 {
     font-family: "Pixelify Sans", sans-serif;
     color: white;
 }
+h1 {
+  font-size: 7vh;
+}
+h4 {
+  font-size: 3vh;
+}
 .container {
     position: relative; /* Make container relative */
     display: flex;
@@ -20,6 +26,8 @@ h1, h4 {
 /* Body styles */
 body {
     background-color: black;
+    margin: 0; /* Remove default body margin */
+    font-family: "Montserrat", sans-serif; /* Apply a fallback font */
 }
 
 /* Link styles */
@@ -35,8 +43,7 @@ a {
     box-sizing: border-box;
 }
 html {
-    font-size: 40px;
-    font-family: "Montserrat";
+    font-size: 1rem; /* Base font size */
     scroll-behavior: smooth;
 }
 
@@ -48,34 +55,31 @@ section {
   justify-content: center;
   position: relative; /* Needed for button positioning */
 }
-
 #sec-1,
 #sec-2,
 #sec-3 {
   background-color: black;
 }
 #sec-2 {
-  min-height: 106vh;
+  max-height: 99vh;
 }
 /* Scroll down button styles */
-/* Scroll down button styles */
 .scroll-down {
-  position: absolute; /* Position relative to the nearest positioned ancestor */
-  top: 285px; /* Position from the top */
-  left: 50%; /* Position from the left */
-  transform: translateX(-50%); /* Center horizontally */
+  position: absolute;
+  bottom: 1vh; /* Position from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  top: 38vh;
+  height: 6vh; /* Adjusted height for better visibility */
+  width: 6vh;
+  border: transparent;
+  border-radius: 50%;
   
-  height: 80px; /* Height of the button */
-  width: 60px; /* Width of the button */
-  border: transparent; /* No border */
-  border-radius: 50px; /* Rounded corners */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
-  display: flex; /* Use flexbox for alignment */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  
-  cursor: pointer; /* Change cursor to pointer on hover */
-  margin: 0; /* No margin */
+  cursor: pointer;
 }
 
 /* Adjust the pseudo-elements' positions for centering */
@@ -83,23 +87,16 @@ section {
 .scroll-down::after {
   content: "";
   position: absolute;
-  top: 50%; /* Move them to the middle vertically */
-  height: 10px;
-  width: 10px;
-  transform: translate(-50%, -50%) rotate(45deg); /* Center them */
-  border: 2px solid white;
+  top: 1vh;
+  height: 1vh; /* Adjusted height */
+  width: 1vh; /* Adjusted width */
+  transform: translate(-50%, -50%) rotate(45deg);
+  border: 0.35vh solid white; /* Adjusted border width */
   border-top: transparent;
   border-left: transparent;
   animation: scroll-down 1s ease-out infinite;
 }
 
-.has-scroll-down { /* New class */
-  position: relative; /* Needed for button positioning */
-}
-
-#sec-2.has-scroll-down {
-  /* Inherit styles from section */
-}
 .scroll-down::before {
   animation-delay: 0.8s;
 }
@@ -122,6 +119,6 @@ section {
 
 /* Link styles (for the button) */
 .jump-button {
-  position: relative; /* Needed for button positioning */
-  display: block; /* Ensure the button is visible */
+  position: relative;
+  display: block;
 }
