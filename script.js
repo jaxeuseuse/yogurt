@@ -12,10 +12,3 @@
         document.querySelectorAll('.jump-button').forEach(button => {
             button.addEventListener('click', scrollToSection);
         });
-// Get the chat icon element
-var chatIcon = document.querySelector('[data-name="BMC-Widget"]');
-
-// Move the chat icon to the left
-chatIcon.style.position = 'fixed';
-chatIcon.style.right = 'auto';
-chatIcon.style.left = '0';
