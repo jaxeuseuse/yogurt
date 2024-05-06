@@ -10,12 +10,6 @@ h1, h4 {
     font-family: "Pixelify Sans", sans-serif;
     color: white;
 }
-h1 {
-  font-size: 7vh;
-}
-h4 {
-  font-size: 3vh;
-}
 .container {
     position: relative; /* Make container relative */
     display: flex;
@@ -26,8 +20,6 @@ h4 {
 /* Body styles */
 body {
     background-color: black;
-    margin: 0; /* Remove default body margin */
-    font-family: "Montserrat", sans-serif; /* Apply a fallback font */
 }
 
 /* Link styles */
@@ -43,7 +35,8 @@ a {
     box-sizing: border-box;
 }
 html {
-    font-size: 1rem; /* Base font size */
+    font-size: 40px;
+    font-family: "Montserrat";
     scroll-behavior: smooth;
 }
 
@@ -55,31 +48,34 @@ section {
   justify-content: center;
   position: relative; /* Needed for button positioning */
 }
+
 #sec-1,
 #sec-2,
 #sec-3 {
   background-color: black;
 }
 #sec-2 {
-  max-height: 99vh;
+  min-height: 106vh;
 }
 /* Scroll down button styles */
+/* Scroll down button styles */
 .scroll-down {
-  position: absolute;
-  bottom: 1vh; /* Position from the bottom */
-  left: 50%;
-  transform: translateX(-50%);
-  top: 38vh;
-  height: 6vh; /* Adjusted height for better visibility */
-  width: 6vh;
-  border: transparent;
-  border-radius: 50%;
+  position: absolute; /* Position relative to the nearest positioned ancestor */
+  top: 285px; /* Position from the top */
+  left: 50%; /* Position from the left */
+  transform: translateX(-50%); /* Center horizontally */
   
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 80px; /* Height of the button */
+  width: 60px; /* Width of the button */
+  border: transparent; /* No border */
+  border-radius: 50px; /* Rounded corners */
   
-  cursor: pointer;
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  
+  cursor: pointer; /* Change cursor to pointer on hover */
+  margin: 0; /* No margin */
 }
 
 /* Adjust the pseudo-elements' positions for centering */
@@ -87,18 +83,25 @@ section {
 .scroll-down::after {
   content: "";
   position: absolute;
-  top: 1vh;
-  height: 1vh; /* Adjusted height */
-  width: 1vh; /* Adjusted width */
-  transform: translate(-50%, -50%) rotate(45deg);
-  border: 0.35vh solid white; /* Adjusted border width */
+  top: 50%; /* Move them to the middle vertically */
+  height: 15px;
+  width: 15px;
+  transform: translate(-50%, -50%) rotate(45deg); /* Center them */
+  border: 5px solid white;
   border-top: transparent;
   border-left: transparent;
-  animation: scroll-down 1s ease-out infinite;
+  animation: scroll-down 2s ease-out infinite;
 }
 
+.has-scroll-down { /* New class */
+  position: relative; /* Needed for button positioning */
+}
+
+#sec-2.has-scroll-down {
+  /* Inherit styles from section */
+}
 .scroll-down::before {
-  animation-delay: 0.8s;
+  animation-delay: 0.81s;
 }
 
 @keyframes scroll-down {
@@ -119,6 +122,32 @@ section {
 
 /* Link styles (for the button) */
 .jump-button {
-  position: relative;
-  display: block;
+  position: relative; /* Needed for button positioning */
+  display: block; /* Ensure the button is visible */
+}
+/* Override the inline styles for the chat icon */
+/* Override the inline styles for the chat icon */
+.bmc-widget {
+  position: fixed !important;
+  right: auto !important; /* Reset any right positioning */
+  left: 0 !important; /* Align to the left */
+  /* You can also adjust other properties like top, bottom, z-index, etc. */
+}
+.zsiq_floatmain {
+  top: 1.5% !important;
+  bottom: auto !important;
+  right: 18px !important
+  }
+.secret-button {
+  position: absolute;
+    top: 10px; /* Adjust this value to position the button vertically */
+    left: 10px; /* Adjust this value to position the button horizontally */
+    background-color: black; /* Set background color to black */
+    color:black; /* Set text color to black */
+    border: none; /* Remove border */
+    padding: 10px 15px; /* Adjust padding for button size */
+    font-family: "Pixelify Sans", sans-serif; /* Use specified font */
+    font-size: 16px; /* Set font size */
+    cursor: pointer; /* Show pointer cursor on hover */
+    z-index: 9999; /* Ensure the button is on top of other elements */
 }
