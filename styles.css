@@ -127,17 +127,7 @@ section {
 }
 /* Override the inline styles for the chat icon */
 /* Override the inline styles for the chat icon */
-.bmc-widget {
-  position: fixed !important;
-  right: auto !important; /* Reset any right positioning */
-  left: 0 !important; /* Align to the left */
-  /* You can also adjust other properties like top, bottom, z-index, etc. */
-}
-.zsiq_floatmain {
-  top: 1.5% !important;
-  bottom: auto !important;
-  right: 18px !important
-  }
+
 .secret-button {
   position: absolute;
     top: 10px; /* Adjust this value to position the button vertically */
